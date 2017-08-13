@@ -98,7 +98,7 @@ chmod +x $FILEPATHDS/demonsaw/nix_64/demonsaw_router
 clear
 
 #Make the .toml file
-(echo -e "[[router]]\nenable = true\nthreads = 128\nname = 'message router 1'\naddress = '$ROUTER_ADDRESS'\npassword = ''\nport = $PORT_NUMBER\n[router.option]\nbuffer_size = 32\nmotd = 'Roadwarriors Titan router'\nredirect = 'https://demonsaw.com'\n[[router.room]]\nenable = true\nname = 'Room#1'\ncolor = 'ff52c175'\n[[router.room]]\nenable = true\nname = 'Room#2'\ncolor = 'ff0c9bdc'\n[[router.room]]\nenable = true\nname = 'Room#3'\ncolor = 'ffff029d'\n" )>$FILEPATHDS/demonsaw/nix_64/demonsaw.toml
+(echo -e "[[router]]\nenable = true\nthreads = 128\nname = 'message router 1'\naddress = '$ROUTER_ADDRESS'\npassword = ''\nport = "$PORT_NUMBER"\n[router.option]\nbuffer_size = 32\nmotd = 'Roadwarriors Titan router'\nredirect = 'https://demonsaw.com'\n[[router.room]]\nenable = true\nname = 'Room#1'\ncolor = 'ff52c175'\n[[router.room]]\nenable = true\nname = 'Room#2'\ncolor = 'ff0c9bdc'\n[[router.room]]\nenable = true\nname = 'Room#3'\ncolor = 'ffff029d'\n" )>$FILEPATHDS/demonsaw/nix_64/demonsaw.toml
 
 #finnish
 echo "-- Config Done --"
