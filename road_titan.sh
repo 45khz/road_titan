@@ -89,12 +89,12 @@ ROUTER_ADDRESS="$HOME_ADDRESS"
 esac
 clear
 
+#Make the .toml file
+(echo -e "[[router]]\nenable = true\nthreads = 128\nname = 'message router 1'\naddress = '$ROUTER_ADDRESS'\npassword = ''\nport = $PORT_NUMBER\n[router.option]\nbuffer_size = 32\nmotd = 'Roadwarriors Titan router'\nredirect = 'https://demonsaw.com'\n[[router.room]]\nenable = true\nname = 'Room#1'\ncolor = 'ff52c175'\n[[router.room]]\nenable = true\nname = 'Room#2'\ncolor = 'ff0c9bdc'\n[[router.room]]\nenable = true\nname = 'Room#3'\ncolor = 'ffff029d'\n" )>$FILEPATHDS/demonsaw/nix_64/demonsaw.toml
+
 #Port for the server
 read -e -p "Enter what port Demonsaw will talk on (most be 1024 or above can be forwarded with iptables, Default port=:" -i "$PORT_NUMBER" PORT_NUMBER
 echo "You entered: $PORT_NUMBER"
-
-#Make the .toml file
-(echo -e "[[router]]\nenable = true\nthreads = 128\nname = 'message router 1'\naddress = '$ROUTER_ADDRESS'\npassword = ''\nport = $PORT_NUMBER\n[router.option]\nbuffer_size = 32\nmotd = 'Roadwarriors Titan router'\nredirect = 'https://demonsaw.com'\n[[router.room]]\nenable = true\nname = 'Room#1'\ncolor = 'ff52c175'\n[[router.room]]\nenable = true\nname = 'Room#2'\ncolor = 'ff0c9bdc'\n[[router.room]]\nenable = true\nname = 'Room#3'\ncolor = 'ffff029d'\n" )>$FILEPATHDS/demonsaw/nix_64/demonsaw.toml
 
 #make executable
 chmod +x $FILEPATHDS/demonsaw/nix_64/demonsaw_router
