@@ -26,14 +26,21 @@ echo "    Welcom to the Roadwarrior's installation of Demonsaw (Titan) router   
 echo "----------------------------------------------------------------------------"
 echo ""
 
-#check if screen is present
-if which screen >/dev/null; then
-  echo "Perfect you already have screen installed"
-else
-  echo "looks like your missing screen lets fix that, its used so we can run Demonsaw in the background"
+
+
+  echo "Going to check if we have Screen (run in background) and unzip (extract the router binary)"
   echo "The code that is going to be run is (apt update && apt install screen && apt install unzip)"
-  su -c 'apt update && apt install screen && apt install unzip'
-fi
+  echo "   1) Yes, check and if missing install"
+  echo "   2) No, take me out of here"
+   read -p "Select an option [1-2]:" dep
+ case $dep in
+1)
+su -c 'apt update && apt install screen && apt install unzip'
+;;
+2)
+exit 0
+;;
+esac
 
 #Install path
 read -e -p "Enter where you want Demonsaw to be installed if untouched Default path= " -i "$FILEPATHDS" FILEPATHDS
